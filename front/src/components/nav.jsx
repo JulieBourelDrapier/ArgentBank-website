@@ -44,7 +44,7 @@ function Nav () {
     <MainNav>
       <MainNavLogo href="./index.html">
         <MainNavLogoImg
-          src="./img/argentBankLogo.png"
+          src="./img/argentBankLogo.webp"
           alt="Argent Bank Logo"
         />
         <SrOnly>Argent Bank</SrOnly>
