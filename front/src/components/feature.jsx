@@ -1,11 +1,6 @@
 
 import styled from 'styled-components';
 
-const Features = styled.section`
-  display: flex;
-  flex-direction: column;
-`;
-
 const SrOnly = styled.h2`
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -40,7 +35,7 @@ const FeatureItemP = styled.p`
 
 function Features () {
   return (
-    <Features>
+    <div>
       <SrOnly>Features</SrOnly>
         <FeatureItem>
           <img src="./img/icon-chat.png" alt="Chat Icon" class="feature-icon" />
@@ -50,7 +45,7 @@ function Features () {
             24/7 chat or through a phone call in less than 5 minutes.
           </FeatureItemP>
         </FeatureItem>
-    </Features>
+    </div>
   );
 }
 
