@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Footer from './components/Footer'; 
-import Nav from './components/Nav';
-import './style.css';
+import Nav from './components/nav';
+import './front/src/style.css';
 
 function SignIn() {
   return (
