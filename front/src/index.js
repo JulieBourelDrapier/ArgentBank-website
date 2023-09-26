@@ -1,23 +1,21 @@
 import React from 'react';
-import './style.css';
 import ReactDOM from 'react-dom';
+import './style.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Home from './pages/home';
-import About from './pages/about';
 import Header from './components/header';
-import Error from './pages/error';
+import Index from './pages/index';
+import SignIn from './pages/signIn';
+import User from './pages/user';
 import Footer from './components/footer';
-import Accommodation from './pages/accommodation';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/accommodation/:accommodationId" element={<Accommodation />} />
-        <Route path='*' element={<Error />} />
+        <Route path="/" element={<Index />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/user" element={<User />} />
       </Routes>
       <Footer />
     </Router>
