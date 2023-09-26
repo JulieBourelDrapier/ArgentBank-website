@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Footer from './components/Footer'; 
 import Nav from './components/nav';
-import './front/src/style.css';
+import './style.css';
 import Feature from '../components/feature';
 
 function Index() {
