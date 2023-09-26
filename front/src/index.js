@@ -1,29 +1,26 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import "./index.css";
-import { Root,  loader as rootloader }from "./routes/root";
-import Contact from "./routes/contact"; 
+import React from 'react';
+import './style.css';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Home from './pages/home';
+import About from './pages/about';
+import Header from './components/header';
+import Error from './pages/error';
+import Footer from './components/footer';
+import Accommodation from './pages/accommodation';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    loader: rootloader,
-    children: [
-      {
-      path: "/contacts/:contactId",
-      element: <Contact />,
-      },
-    ],
-  },
-]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/accommodation/:accommodationId" element={<Accommodation />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+      <Footer />
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
