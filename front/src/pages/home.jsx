@@ -4,7 +4,7 @@ import Nav from './components/nav';
 import './style.css';
 import Feature from './components/feature';
 
-function Index() {
+function Home() {
   return (
     <Fragment>
       <Nav />
@@ -25,4 +25,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;
