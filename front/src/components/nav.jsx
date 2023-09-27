@@ -3,24 +3,25 @@ import '../style.css';
 import Logo from '../img/argentBankLogo.webp';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 const Icon = <FontAwesomeIcon icon={faUserCircle} className ="fa fa-user-circle"/>
 
 function Nav() {
   return (
     <nav className="main-nav">
-      <a className="main-nav-logo" href="./index.html">
+       <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
           src={Logo}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
-      </a>
+      </Link>
       <div>
-        <a className="main-nav-item" href="./sign-in.html">
+        <Link className="main-nav-item" to="/sign-in">
         {Icon} Sign In
-        </a>
+        </Link>
       </div>
     </nav>
   );

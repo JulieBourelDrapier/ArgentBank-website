@@ -1,13 +1,9 @@
 import React, { Fragment } from 'react';
-import Footer from '../components/footer'; 
-import Nav from '../components/nav';
 import '../style.css';
 
 function SignIn() {
   return (
-    <Fragment>
-      <Nav />
-      <main className="main bg-dark">
+    <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
           <h1>Sign In</h1>
@@ -24,15 +20,10 @@ function SignIn() {
               <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
-            <Fragment>
-              <a href="#" className="sign-in-button">Sign In</a>
-              <button className="sign-in-button">Sign In</button>
-            </Fragment>
+            <button className="sign-in-button">Sign In</button>
           </form>
         </section>
       </main>
-      <Footer />
-    </Fragment>
   );
 }
 

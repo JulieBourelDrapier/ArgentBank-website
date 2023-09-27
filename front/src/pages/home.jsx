@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import '../style.css';
 import Feature from '../components/feature';
 import img1 from '../img/icon-chat.webp';
