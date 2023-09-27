@@ -1,21 +1,25 @@
 import React from "react";
 import '../style.css';
+import Logo from '../img/argentBankLogo.webp';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+const Icon = <FontAwesomeIcon icon={faUserCircle} className ="fa fa-user-circle"/>
 
 function Nav() {
   return (
     <nav className="main-nav">
-      <a className="main-nav-logo" href="#">
+      <a className="main-nav-logo" href="./index.html">
         <img
           className="main-nav-logo-image"
-          src="./img/argentBankLogo.webp"
+          src={Logo}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
       </a>
       <div>
-        <a className="main-nav-item" href="#">
-          <i className="fa fa-user-circle"></i>
-          Sign In
+        <a className="main-nav-item" href="./sign-in.html">
+        {Icon} Sign In
         </a>
       </div>
     </nav>
