@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Header from './src/components/header';
-import Index from './src/pages/index';
-import SignIn from './src/pages/signIn';
-import User from './src/pages/user';
-import Footer from './src/components/footer';
+import Header from './components/header';
+import Index from './pages/index';
+import SignIn from './pages/signIn';
+import User from './pages/user';
+import Footer from './components/footer';
 
 ReactDOM.render(
   <React.StrictMode>
