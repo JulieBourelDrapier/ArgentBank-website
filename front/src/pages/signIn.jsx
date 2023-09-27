@@ -25,7 +25,7 @@ function SignIn() {
               <label htmlFor="remember-me">Remember me</label>
             </div>
             <Fragment>
-              <a href="./user.html" className="sign-in-button">Sign In</a>
+              <a href="#" className="sign-in-button">Sign In</a>
               <button className="sign-in-button">Sign In</button>
             </Fragment>
           </form>
