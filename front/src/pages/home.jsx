@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react';
-import Footer from './components/footer'; 
-import Nav from './components/nav';
-import './style.css';
-import Feature from './components/feature';
+import '../style.css';
+import Feature from '../components/feature';
 
 function Home() {
   return (
     <Fragment>
-      <Nav />
       <main>
         <div className="hero">
           <section className="hero-content">
@@ -20,7 +17,6 @@ function Home() {
         </div>
        <Feature />
       </main>
-      <Footer />
     </Fragment>
   );
 }
