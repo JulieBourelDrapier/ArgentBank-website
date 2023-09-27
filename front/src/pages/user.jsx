@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import Footer from '../components/footer'; 
-import Nav from '../components/nav';
-import '../style.css';
-import Account from '../components/account';
+import Footer from './components/footer'; 
+import Nav from './components/nav';
+import './style.css';
+import Account from './components/account';
 
 function User() {
   return (

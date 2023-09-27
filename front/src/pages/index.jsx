@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import Footer from '../components/footer'; 
-import Nav from '../components/nav';
-import '../style.css';
-import Feature from '../components/feature';
+import Footer from './components/footer'; 
+import Nav from './components/nav';
+import './style.css';
+import Feature from './components/feature';
 
 function Index() {
   return (
