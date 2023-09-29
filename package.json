@@ -24,6 +24,7 @@
     "mongoose": "^5.9.21",
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
+    "swagger-ui-dist": "^5.8.0",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
   },

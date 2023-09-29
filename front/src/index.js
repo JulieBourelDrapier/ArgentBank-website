@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from './reducers';
+import { login } from './actions/login.action';
+
  
 import Nav from './components/nav';
 import Home from './pages/home';
@@ -19,6 +21,9 @@ const store = configureStore({
   reducer: rootReducer,
   devTools: true,
 });
+
+// la méthode dispatch intervient au lancement de l'app
+store.dispatch(login()); 
 
 ReactDOM.render(
   <React.StrictMode>
