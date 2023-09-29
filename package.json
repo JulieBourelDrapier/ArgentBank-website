@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.6",
     "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
@@ -32,6 +33,7 @@
     "server": "node ./server/server.js"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "nodemon": "^2.0.4"
   }
 }

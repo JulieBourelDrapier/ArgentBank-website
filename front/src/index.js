@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // REDUX
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from './reducers/index';
-
+import rootReducer from './reducers';
+ 
 import Nav from './components/nav';
 import Home from './pages/home';
 import SignIn from './pages/signIn';

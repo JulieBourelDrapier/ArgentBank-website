@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import '../style.css';
 import Account from '../components/account';
 
