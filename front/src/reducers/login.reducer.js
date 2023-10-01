@@ -1,10 +1,9 @@
-import{ Login } from '../actions/login.action';
-
+import { loginThunk } from "./slices/login.slice";
 const initialState = {};
 
 export default function login(state = initialState, action) {
   switch (action.type) {
-    case login:
+    case loginThunk.fulfilled.type:
       return action.payload;
     default:
       return state;

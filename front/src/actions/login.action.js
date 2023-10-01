@@ -1,17 +1,25 @@
-export const POST = "POST";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+export const LOGIN = "login";
 
 export function login() {
-  return (dispatch) => {
-    return fetch("http://localhost:3001/user/login")
-      .then((response) => response.json())
-      .then((result) => {
-      dispatch({
-        type: 'POST',
-        payload: result.data
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }; 
-};
+  return createAsyncThunk(
+    LOGIN,
+    async (form, thunkAPI) => {
+      try {
+        const response = fetch("http://localhost:3001/api/v1/user/login",{
+          method: "POST",
+          body: form,
+        })
+        if (response.ok) {
+          return response.json().body.token
+        }
+        else {
+          return new Error(response.json().message)
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  )
+}

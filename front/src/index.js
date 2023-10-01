@@ -1,13 +1,11 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // REDUX
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from './reducers';
-import { login } from './actions/login.action';
+import loginReducer from "./slices/login.slice";
 
  
 import Nav from './components/nav';
@@ -18,12 +16,12 @@ import Footer from './components/footer';
 
 // METTRE DEVTOOLS FALSE AVANT MISE EN PROD
 const store = configureStore({
-  reducer: rootReducer,
-  devTools: true,
+  reducer: {
+    login: loginReducer},
+    devTools :  true
 });
 
-// la méthode dispatch intervient au lancement de l'app
-store.dispatch(login()); 
+export const useAppDispatch = () => useDispatch()
 
 ReactDOM.render(
   <React.StrictMode>

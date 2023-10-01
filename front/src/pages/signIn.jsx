@@ -1,38 +1,58 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { loginThunk as login } from '../slices/login.slice';
 import '../style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+// import { useAppDispatch } from '..';
 
-const Icon = <FontAwesomeIcon icon={faUserCircle} className ="fa fa-user-circle sign-in-icon"/>
+const Icon = <FontAwesomeIcon icon={ faUserCircle } className ="fa fa-user-circle sign-in-icon"/>
 
 function SignIn() {
+  const { handleSubmit, register, formState: { errors } } = useForm();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    const result = await dispatch(login({email: data.username, password: data.password}));
+    console.log(result)
+    if (result === "fulfilled") {
+      navigate("/user");
+    } else {
+      setError("un problème est survenu");
+    }
+  }
+
   return (
     <body>
-    <main className="main bg-dark">
+      <main className="main bg-dark">
         <section className="sign-in-content">
-        {Icon}
+          {Icon}
           <h1>Sign In</h1>
-          <form>
+          {error && <div className="error">{error}</div>}
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="input-wrapper">
-              <label htmlFor="username">Username</label>
-              <input type="text" id="username" />
+              <input {...register("username", { required: true })} />
+              {errors.username && <span> Nom d'utilisateur incorrect</span>}
             </div>
             <div className="input-wrapper">
-              <label htmlFor="password">Password</label>
-              <input type="password" id="password" />
+            <input {...register("password", { required: true })} />
+              {errors.password && <span> Password incorrect</span>} 
             </div>
+            
             <div className="input-remember">
-              <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
+              <input type="checkbox" id="remember-me" {...register("remember")} />
             </div>
-         
-            <Link className="sign-in-button" to="/user">Sign In</Link>
+            <button type="submit">Sign in</button>
           </form>
         </section>
       </main>
-      </body>
+    </body>
   );
 }
-
 export default SignIn;

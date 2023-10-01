@@ -3,7 +3,7 @@ import '../style.css';
 import Logo from '../img/argentBankLogo.webp';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Icon = <FontAwesomeIcon icon={faUserCircle} className ="fa fa-user-circle"/>
 
