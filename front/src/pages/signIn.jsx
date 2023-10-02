@@ -20,7 +20,7 @@ function SignIn() {
     console.log(data);
     const result = await dispatch(login({email: data.username, password: data.password}));
     console.log(result)
-    if (result === "fulfilled") {
+    if (typeof result.payload === "string") {
       navigate("/user");
     } else {
       setError("un problème est survenu");
@@ -28,7 +28,7 @@ function SignIn() {
   }
 
   return (
-    <body>
+ 
       <main className="main bg-dark">
         <section className="sign-in-content">
           {Icon}
@@ -52,7 +52,7 @@ function SignIn() {
           </form>
         </section>
       </main>
-    </body>
+ 
   );
 }
 export default SignIn;

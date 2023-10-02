@@ -20,7 +20,7 @@ const store = configureStore({
     login: loginReducer},
     devTools :  true
 });
-
+//todo delete this line
 export const useAppDispatch = () => useDispatch()
 
 ReactDOM.render(
