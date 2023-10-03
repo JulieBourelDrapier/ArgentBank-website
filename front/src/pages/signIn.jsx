@@ -23,7 +23,7 @@ function SignIn() {
     if (typeof result.payload === "string") {
       navigate("/user");
     } else {
-      setError("un problème est survenu");
+      setError("Email and/or password incorrect");
     }
   }
 
@@ -36,19 +36,16 @@ function SignIn() {
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="input-wrapper">
-              <input {...register("username", { required: true })} />
-              {errors.username && <span> Nom d'utilisateur incorrect</span>}
+              <input {...register("username", { required: true })} autoComplete="off" />
             </div>
             <div className="input-wrapper">
-            <input {...register("password", { required: true })} />
-              {errors.password && <span> Password incorrect</span>} 
+            <input {...register("password", { required: true })} type="password" autoComplete="off"/>
             </div>
-            
             <div className="input-remember">
               <label htmlFor="remember-me">Remember me</label>
               <input type="checkbox" id="remember-me" {...register("remember")} />
             </div>
-            <button type="submit">Sign in</button>
+            <button type="submit" className="sign-in-button">Sign in</button>
           </form>
         </section>
       </main>
