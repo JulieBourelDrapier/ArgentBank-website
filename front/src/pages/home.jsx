@@ -6,7 +6,6 @@ import img3 from '../img/icon-security.webp';
 
 function Home() {
   return (
-    
     <main>
       <div className="hero">
         <section className="hero-content">
@@ -24,7 +23,6 @@ function Home() {
         <Feature img={{ src: img3, alt: 'security icon'}} desc={'We use top of the line encryption to make sure your data and money is always safe.'} title={'Security you can trust'} />
       </section>
     </main>
-    
   );
 }
 
