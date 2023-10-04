@@ -62,21 +62,23 @@ export const loginSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
     },
-  },
-  setProfile: (state, action) => {
-    state.username = action.payload.username;
-    state.firstName = action.payload.firstName;
-    state.lastName = action.payload.lastName;
-  },
-  logOut: (state, action) => {
-    state = initialState
+    setProfile: (state, action) => {
+      state.username = action.payload.username;
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+    },
+    logOut: (state, action) => {
+      state.username = '';
+      state.firstName = '';
+      state.lastName = '';
+      state.token = '';
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(loginThunk.fulfilled, (state, { payload }) => {
       state.token = payload;
     });
     builder.addCase(profileThunk.fulfilled, (state, {payload}) => {
-      console.log(payload);
       state.userName = payload.userName;
       state.firstName = payload.firstName;
       state.lastName = payload.lastName;

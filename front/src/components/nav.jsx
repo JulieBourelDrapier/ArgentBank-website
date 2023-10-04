@@ -6,6 +6,7 @@ import '../style.css';
 import Logo from '../img/argentBankLogo.webp';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { logOut } from "../slices/login.slice";
 
 const Icon = <FontAwesomeIcon icon={faUserCircle} className ="fa fa-user-circle"/>
 const IconOut = <FontAwesomeIcon icon={faRightFromBracket} className ="fa fa-right-from-bracket"/>
@@ -13,22 +14,18 @@ const IconOut = <FontAwesomeIcon icon={faRightFromBracket} className ="fa fa-rig
 
 function Nav() {
   const {token: signIn, userName} = useSelector((state) => state.login);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  function signOut(event) {
-    event.preventDefault();
-    dispatch(signOut());
-    navigate("/");
-  }
-  
 
   const logo = !!signIn ?
   <Fragment>
     <Link className="main-nav-item" to="/user">
       {Icon} {userName}
     </Link>
-    <Link className="main-nav-item" to="/" onClick={() => dispatch(signOut())}>
+    <Link className="main-nav-item" to="/" onClick={() => {
+      dispatch(logOut())
+      navigate("/");
+      }}>
       {IconOut} Sign Out
     </Link>
   </Fragment>
