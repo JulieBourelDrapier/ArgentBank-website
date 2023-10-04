@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { loginThunk as login } from '../slices/login.slice';
+import { loginThunk as login, profileThunk as profile } from '../slices/login.slice';
 import '../style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
@@ -17,10 +17,9 @@ function SignIn() {
   const [error, setError] = useState('');
 
   const onSubmit = async (data) => {
-    console.log(data);
     const result = await dispatch(login({email: data.username, password: data.password}));
-    console.log(result)
     if (typeof result.payload === "string") {
+      await dispatch(profile(result.payload));
       navigate("/user");
     } else {
       setError("Email and/or password incorrect");
