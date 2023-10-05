@@ -38,12 +38,12 @@ function SignIn() {
             <div className="input-wrapper">
               <label htmlFor="password">Username</label>
               <input {...register("username", { required: true })} type="username" autoComplete="off" />
-            {errors?.username && <div className="error">Email field required</div>}
+            {errors?.username && <div className="error">Email is required</div>}
             </div>
             <div className="input-wrapper">
               <label htmlFor="password">Password</label>
             <input {...register("password", { required: true })} id="password" type="password" autoComplete="off"/>
-            {errors?.password && <div className="error">Password field required</div>}
+            {errors?.password && <div className="error">Password is required</div>}
             </div>
             <div className="input-remember">
               <label htmlFor="remember-me">Remember me</label>
