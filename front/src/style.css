@@ -301,7 +301,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  min-width: 300px;
 }
 .form-buttons {
   display: flex;
@@ -309,7 +309,6 @@ main {
   justify-content: center;
   align-items: center;
   margin: auto;
-  
   gap: 10px;
 }
 .form-sign-in-button {
