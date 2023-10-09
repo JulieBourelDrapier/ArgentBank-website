@@ -21,24 +21,26 @@ function EditUser({ firstName, lastName, userName, updateShowEditUser }) {
     <div>
       <h1>Edit User</h1>
       {error && <div className="error">{error}</div>}
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="input-wrapper">
-          <label htmlFor="userName">UserName</label>
-          <input {...register("userName", { required: true })} id="userName" type="text" autoComplete="off" placeholder={userName}/>
+          <label htmlFor="userName">UserName :</label>
+          <input className="input" {...register("userName", { required: true })} id="userName" type="text" autoComplete="off" placeholder={userName}/>
         {errors?.userName && <div className="error">User is required</div>}
         </div>
         <div className="input-wrapper">
-          <label htmlFor="firstName">FirstName</label>
-        <input {...register("firstName", { required: true, disabled:true })} id="firstName" type="firstName" autoComplete="off" value={firstName}/>
+          <label htmlFor="firstName">FirstName :</label>
+        <input className="input"  {...register("firstName", { required: true, disabled:true })} id="firstName" type="firstName" autoComplete="off" value={firstName}/>
         {errors?.firstName && <div className="error">FirstName is required</div>}
         </div>
         <div className="input-wrapper">
-          <label htmlFor="lastName">lastName</label>
-        <input {...register("lastName", { required: true, disabled:true })} id="lastName" type="lastName" autoComplete="off" value={lastName}/>
+          <label htmlFor="lastName">lastName :</label>
+        <input className="input"  {...register("lastName", { required: true, disabled:true })} id="lastName" type="lastName" autoComplete="off" value={lastName}/>
         {errors?.lastName && <div className="error">LastName is required</div>}
         </div>
+        <div className="form-buttons">
         <button type="submit" className="sign-in-button">Save</button>
         <button type="button" className="sign-in-button" onClick={() => updateShowEditUser(false)}>Cancel</button>
+        </div>
       </form>
     </div>
   );

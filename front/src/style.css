@@ -157,16 +157,34 @@ main {
   margin-bottom: 0.5rem;
 }
 
+/*form*/
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+/*modifications to these btns*/
 .sign-in-button {
   display: block;
-  width: 100%;
-  padding: 8px;
+  width: 180px;
+  padding: 10px;
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 1rem;
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  border-radius: 4px;
+}
+
+/*boutons : edit form*/
+.form-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .sign-in-content {
@@ -178,6 +196,10 @@ main {
   padding: 2rem;
 }
 
+/*added*/
+.input {
+  width: 150px;
+}
 /* .sign-in-icon {
   font-size: 5rem;
 } */
@@ -192,13 +214,15 @@ main {
 
 .input-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;/*modified*/
   text-align: left;
   margin-bottom: 1rem;
 }
 
 .input-wrapper label {
   font-weight: bold;
+  padding: 10px;
+  width: 100px;
 }
 
 .input-wrapper input {
