@@ -157,34 +157,16 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/*form*/
-.form {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-}
-/*modifications to these btns*/
 .sign-in-button {
   display: block;
-  width: 180px;
-  padding: 10px;
+  width: 100%;
+  padding: 8px;
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 1rem;
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
-  border-radius: 4px;
-}
-
-/*boutons : edit form*/
-.form-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
 }
 
 .sign-in-content {
@@ -196,10 +178,6 @@ main {
   padding: 2rem;
 }
 
-/*added*/
-.input {
-  width: 150px;
-}
 /* .sign-in-icon {
   font-size: 5rem;
 } */
@@ -214,15 +192,13 @@ main {
 
 .input-wrapper {
   display: flex;
-  flex-direction: row;/*modified*/
+  flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
 }
 
 .input-wrapper label {
   font-weight: bold;
-  padding: 10px;
-  width: 100px;
 }
 
 .input-wrapper input {
@@ -316,4 +292,50 @@ main {
   .transaction-button {
     width: 200px;
   }
+}
+
+/*changements en lien avec edit user form*/
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  
+  gap: 10px;
+}
+.form-sign-in-button {
+  display: block;
+  width: 180px;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+}
+.form-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  gap: 8px;
+}
+
+.form-input-wrapper label {
+  font-weight: bold;
+  padding-top: 8px;
+}
+
+.form-input-wrapper input {
+  padding: 5px;
+  font-size: 1.2rem;
 }
